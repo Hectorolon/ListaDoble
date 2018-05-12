@@ -1,0 +1,10 @@
+c:\users\hrolo\source\repos\ListasDobles\ListasDobles\bin\Debug\ListasDobles.exe.config
+c:\users\hrolo\source\repos\ListasDobles\ListasDobles\bin\Debug\ListasDobles.exe
+c:\users\hrolo\source\repos\ListasDobles\ListasDobles\bin\Debug\ListasDobles.pdb
+c:\users\hrolo\source\repos\ListasDobles\ListasDobles\obj\Debug\ListasDobles.csprojResolveAssemblyReference.cache
+c:\users\hrolo\source\repos\ListasDobles\ListasDobles\obj\Debug\ListasDobles.Form1.resources
+c:\users\hrolo\source\repos\ListasDobles\ListasDobles\obj\Debug\ListasDobles.Properties.Resources.resources
+c:\users\hrolo\source\repos\ListasDobles\ListasDobles\obj\Debug\ListasDobles.csproj.GenerateResource.Cache
+c:\users\hrolo\source\repos\ListasDobles\ListasDobles\obj\Debug\ListasDobles.csproj.CoreCompileInputs.cache
+c:\users\hrolo\source\repos\ListasDobles\ListasDobles\obj\Debug\ListasDobles.exe
+c:\users\hrolo\source\repos\ListasDobles\ListasDobles\obj\Debug\ListasDobles.pdb
