@@ -8,68 +8,6 @@ namespace ListasDobles
 {
     class Inventario
     {
-        private Producto[] _producto;
-        private int _contador;
-
-
-        public Inventario(int tamaño)
-        {
-            _producto = new Producto[tamaño];
-            _contador = 0;
-        }
-
-        public void agregar(Producto nuevo)
-        {
-            if (inicio == null)
-            {
-                inicio = nuevo;
-                ultimo = inicio;
-            }
-            else
-            {
-                ultimo._siguiente = nuevo;
-                nuevo._anterior = ultimo;
-                ultimo = nuevo;
-            }
-        }
-
-        public string eliminar(int posicion)
-        {
-            for (int i = posicion; i < _contador - 1; i++)
-            {
-                _producto[i] = _producto[i + 1];
-            }
-            if (_contador - 1 > 0)
-            {
-                _producto[_contador - 1] = null;
-                _contador--;
-            }
-            return "Producto eliminado";
-        }
-
-        public Producto buscar(int codigo)
-        {
-            for (int i = 0; i < _contador; i++)
-            {
-                if (_producto[i] != null)
-                {
-                    if (_producto[i]._codigo == codigo)
-                        return _producto[i];
-                }
-            }
-            return null;
-        }
-
-        public string listar()
-        {
-            string vector = "";
-            for (int i = 0; i < _contador; i++)
-            {
-                vector += _producto[i].ToString();
-            }
-            return vector;
-        }
-
         Producto inicio = null;
         Producto ultimo = null;
 
@@ -86,6 +24,78 @@ namespace ListasDobles
                 nuevo._anterior = ultimo;
                 ultimo = nuevo;
             }
+        }
+
+        public void eliminar(int codigo)
+        {
+            Producto t = inicio;
+            while(t != null)
+            {
+                if (t._codigo == codigo)
+                {
+                    if(t == inicio)
+                    {
+                        inicio = inicio._siguiente;
+                        inicio._anterior = null;
+                    }
+                    else if(t == ultimo)
+                    {
+                        t._anterior._siguiente = null;
+                        ultimo = t._anterior;
+                    }
+                    else
+                    {
+                        t._anterior._siguiente = t._siguiente;
+                        t._siguiente._anterior = t._anterior;
+                    }
+                }
+                t = t._siguiente;
+            }
+        }
+
+        public void eliminarPrimero()
+        {
+            if (inicio != null)
+            {
+                eliminar(inicio._codigo);
+            }
+        }
+
+        public void eliminarUltimo()
+        {
+            if(inicio != null)
+            {
+                eliminar(ultimo._codigo);
+            }
+        }
+
+        public Producto buscar(int codigo)
+        {
+            if (inicio != null)
+            {
+                Producto t = inicio;
+                while (t != null)
+                {
+                    if (t._codigo == codigo)
+                    {
+                        return t;
+                    }
+                    t = t._siguiente;
+                }
+            }
+            return null;
+        }
+
+        public string listar()
+        {
+            string res = "";
+            Producto t = inicio;
+            while (t != null)
+            {
+                res += t.ToString() + Environment.NewLine;
+                t = t._siguiente;
+            }
+            return res;
         }
 
         public string invertirLista()

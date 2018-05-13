@@ -12,7 +12,7 @@ namespace ListasDobles
 {
     public partial class Form1 : Form
     {
-        Inventario inventario = new Inventario(15);
+        Inventario inventario = new Inventario();
         public Form1()
         {
             InitializeComponent();
@@ -51,8 +51,8 @@ namespace ListasDobles
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             txtMostrar.Clear();
-            int posicion = Convert.ToInt32(txtEliminar.Text);
-            txtMostrar.Text = inventario.eliminar(posicion);
+            int codigo = Convert.ToInt32(txtEliminar.Text);
+            inventario.eliminar(codigo);
         }
 
         private void btnLista_Click(object sender, EventArgs e)
@@ -64,6 +64,18 @@ namespace ListasDobles
         private void btnInvertirLista_Click(object sender, EventArgs e)
         {
             txtMostrar.Text = inventario.invertirLista();
+        }
+
+        private void btnEliminarInicio_Click(object sender, EventArgs e)
+        {
+            txtMostrar.Clear();
+            inventario.eliminarPrimero();
+        }
+
+        private void btnEliminarUltimo_Click(object sender, EventArgs e)
+        {
+            txtMostrar.Clear();
+            inventario.eliminarUltimo();
         }
     }
 }

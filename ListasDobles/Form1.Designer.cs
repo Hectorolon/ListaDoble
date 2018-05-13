@@ -178,6 +178,7 @@
             this.btnEliminarInicio.TabIndex = 14;
             this.btnEliminarInicio.Text = "EliminarInicio";
             this.btnEliminarInicio.UseVisualStyleBackColor = true;
+            this.btnEliminarInicio.Click += new System.EventHandler(this.btnEliminarInicio_Click);
             // 
             // btnEliminarUltimo
             // 
@@ -187,6 +188,7 @@
             this.btnEliminarUltimo.TabIndex = 15;
             this.btnEliminarUltimo.Text = "EliminarUltimo";
             this.btnEliminarUltimo.UseVisualStyleBackColor = true;
+            this.btnEliminarUltimo.Click += new System.EventHandler(this.btnEliminarUltimo_Click);
             // 
             // btnInvertirLista
             // 
@@ -203,6 +205,7 @@
             this.txtMostrar.Location = new System.Drawing.Point(15, 195);
             this.txtMostrar.Multiline = true;
             this.txtMostrar.Name = "txtMostrar";
+            this.txtMostrar.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtMostrar.Size = new System.Drawing.Size(417, 148);
             this.txtMostrar.TabIndex = 17;
             // 
